@@ -3,6 +3,8 @@
 #include "comandos.h"
 #include "archivos.h"
 #include "procesos.h"
+#include "bash_analyzer.h"
+#include "respaldos.h"
 
 void mostrar_menu() {
     printf("\n========================================\n");
@@ -41,11 +43,11 @@ int main() {
                 modulo_comandos();
                 break;
             case 4:
-                printf("\n[!] Modulo de Respaldos en construccion...\n");
-                break;
+                modulo_respaldos();
+		break;
             case 5:
-                printf("\n[!] Analizador de Bash en construccion...\n");
-                break;
+                modulo_bash();
+		break;
             case 6:
                 printf("\n[!] Cola de descargas en construccion...\n");
                 break;
