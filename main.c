@@ -5,6 +5,7 @@
 #include "procesos.h"
 #include "bash_analyzer.h"
 #include "respaldos.h"
+#include "descargas.h"
 
 void mostrar_menu() {
     printf("\n========================================\n");
@@ -49,8 +50,8 @@ int main() {
                 modulo_bash();
 		break;
             case 6:
-                printf("\n[!] Cola de descargas en construccion...\n");
-                break;
+                modulo_descargas();
+		break;
             case 0:
                 printf("\nSaliendo del programa...\n");
                 break;
