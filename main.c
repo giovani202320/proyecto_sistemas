@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "comandos.h"
+#include "archivos.h"
+
 void mostrar_menu() {
     printf("\n========================================\n");
     printf("      PROGRAMA ADMIN EN LINUX\n");
@@ -32,7 +34,7 @@ int main() {
                 printf("\n[!] Modulo de Procesos en construccion...\n");
                 break;
             case 2:
-                printf("\n[!] Modulo de Archivos en construccion...\n");
+		modulo_archivos();
                 break;
             case 3:
                 modulo_comandos();
