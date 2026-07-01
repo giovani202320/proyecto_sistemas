@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
 TARGET = build/admin_linux
-SRCS = main.c src/comandos/comandos.c src/archivos/archivos.c 
+SRCS = main.c src/comandos/comandos.c src/archivos/archivos.c src/procesos/procesos.c 
 
 all: $(TARGET)
 

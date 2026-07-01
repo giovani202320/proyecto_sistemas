@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "comandos.h"
 #include "archivos.h"
+#include "procesos.h"
 
 void mostrar_menu() {
     printf("\n========================================\n");
@@ -31,7 +32,7 @@ int main() {
 
         switch(opcion) {
             case 1:
-                printf("\n[!] Modulo de Procesos en construccion...\n");
+                modulo_procesos();
                 break;
             case 2:
 		modulo_archivos();

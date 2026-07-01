@@ -29,14 +29,27 @@ void listar_archivos() {
 }
 
 void eliminar_archivo(const char *nombre) {
-    // La funcion unlink elimina el archivo en Linux
-    if (unlink(nombre) == 0) {
-        printf("\n[Exito] Archivo '%s' eliminado correctamente.\n", nombre);
-    } else {
-        printf("\n\033[0;31m[Error] No se pudo eliminar el archivo '%s'.\033[0m\n", nombre);
+    char confirmacion;
+    
+    // Mostramos una advertencia en amarillo
+    printf("\n\033[0;33m[Atencion] ¿Estas seguro que deseas eliminar permanentemente el archivo '%s'? (s/n): \033[0m", nombre);
+    
+    // Leemos un solo caracter
+    if (scanf(" %c", &confirmacion) == 1) {
+        while(getchar() != '\n'); // Limpiamos el buffer por si el usuario escribe mas cosas
+        
+        if (confirmacion == 's' || confirmacion == 'S') {
+            // Recien aqui procedemos a borrar
+            if (unlink(nombre) == 0) {
+                printf("\n[Exito] Archivo '%s' eliminado correctamente.\n", nombre);
+            } else {
+                printf("\n\033[0;31m[Error] No se pudo eliminar '%s'. (Asegurate de que no sea una carpeta y exista)\033[0m\n", nombre);
+            }
+        } else {
+            printf("\nOperacion cancelada. Tu archivo esta a salvo.\n");
+        }
     }
 }
-
 void modulo_archivos() {
     int opcion;
     char buffer[256];
